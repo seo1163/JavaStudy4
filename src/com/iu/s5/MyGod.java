@@ -1,13 +1,19 @@
 package com.iu.s5;
 
 public class MyGod {
-
-private MyGod() {}
+	
+	private static MyGod myGod;
+	
+	private MyGod() {}
 	
 	
-	public void makeGod() {
-		MyGod myGod = new MyGod();
+	public static MyGod makeGod() {
+		if(MyGod.myGod == null) {
+			MyGod.myGod = new MyGod();
+		}
+		return MyGod.myGod;
+		
 	}
-	
+		
 	
 }
